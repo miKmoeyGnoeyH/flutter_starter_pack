@@ -1,4 +1,4 @@
-# bloc_ex
+# flutter_starter_pack
 
 A new Flutter project.
 
