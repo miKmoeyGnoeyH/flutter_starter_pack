@@ -1,7 +1,8 @@
-import 'package:bloc_ex/theme/theme_factory.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'pages/home.dart';
+import 'theme/theme_factory.dart';
 
 class App extends StatefulWidget {
   static bool isForeground = true;
@@ -19,6 +20,8 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
       theme: theme,
       home: const Home(),
     );
