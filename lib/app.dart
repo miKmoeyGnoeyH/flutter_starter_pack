@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/home.dart';
-import 'theme/theme_factory.dart';
+import 'widgets/home/home.dart';
+import 'managers/navigator/navigator_key_manager.dart';
+import 'managers/navigator/routes.dart';
+import 'widgets/global/custom_theme_app.dart';
 
 class App extends StatefulWidget {
   static bool isForeground = true;
@@ -14,16 +16,19 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> with WidgetsBindingObserver {
-  ThemeData theme = ThemeFactory.getThemeDataDependsOnSystemBrightness;
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      theme: theme,
-      home: const Home(),
+    return CustomThemeApp(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        navigatorKey: NavigatorKeyManager().navigatorKey,
+        routes: {
+          Routes.home: (context) => const HomeScreen(),
+        },
+        initialRoute: Routes.home,
+      ),
     );
   }
 
@@ -37,15 +42,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
-  }
-
-  @override
-  void didChangePlatformBrightness() {
-    debugPrint('didChangePlatformBrightness');
-    setState(() {
-      theme = ThemeFactory.getThemeDataDependsOnSystemBrightness;
-    });
-    super.didChangePlatformBrightness();
   }
 
   @override
