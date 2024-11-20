@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/home/home.dart';
 import 'managers/navigator/navigator_key_manager.dart';
 import 'managers/navigator/routes.dart';
 import 'widgets/global/custom_theme_app.dart';
@@ -23,11 +22,9 @@ class _AppState extends State<App> with WidgetsBindingObserver {
         debugShowCheckedModeBanner: false,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
-        navigatorKey: NavigatorKeyManager().navigatorKey,
-        routes: {
-          Routes.home: (context) => const HomeScreen(),
-        },
-        initialRoute: Routes.home,
+        navigatorKey: NavigatorKeyManager.navigatorKey,
+        onGenerateRoute: onGenerateRoute,
+        initialRoute: RouteNames.home,
       ),
     );
   }
