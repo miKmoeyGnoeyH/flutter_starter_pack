@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'colors/if_custom_colors.dart';
+import '../colors/if_custom_colors.dart';
 
 class CustomThemeHolder extends InheritedWidget {
   const CustomThemeHolder({

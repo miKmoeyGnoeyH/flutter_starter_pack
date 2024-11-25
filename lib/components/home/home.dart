@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../global/custom_appbar.dart';
-import '../global/custom_scaffold.dart';
+import '../global/shapes/custom_appbar.dart';
+import '../global/widgets/layouts/custom_scaffold.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

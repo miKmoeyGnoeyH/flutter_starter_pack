@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'managers/navigator/navigator_key_manager.dart';
 import 'managers/navigator/routes.dart';
-import 'widgets/global/custom_theme_app.dart';
+import 'theme/comsume/custom_theme_app.dart';
 
 class App extends StatefulWidget {
   static bool isForeground = true;

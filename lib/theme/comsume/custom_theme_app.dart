@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 
-import '../../theme/colors/if_custom_colors.dart';
-import '../../theme/custom_theme_holder.dart';
-import '../../theme/theme_factory.dart';
+import '../colors/if_custom_colors.dart';
+import 'custom_theme_holder.dart';
+import 'theme_factory.dart';
 
 class CustomThemeApp extends StatefulWidget {
   const CustomThemeApp({required this.child, super.key});
